@@ -32,18 +32,12 @@ public class TwitterController extends DefaultResponseErrorHandler {
 	private Twitter twitter;
 	private ConnectionRepository connectionRepository;
 	
-	/**Comment following lines to use your Twitter tokens declared in TwitterApplication.java**/
 	@Inject
 	public TwitterController(Twitter twitter, ConnectionRepository connectionRepository) {
 	    this.twitter = twitter;
 	    this.connectionRepository = connectionRepository;
 	}
 	
-	/**Uncomment following lines to autowire Twitter tokens**/
-	//	@Autowired
-	//	private Twitter twitter;
-	
-	//	home timeline will only work if you have added your tokens
 	@RequestMapping(value= "home")
 	public List<Tweet> getHomeTimeline() {
 		return twitter.timelineOperations().getHomeTimeline(200);

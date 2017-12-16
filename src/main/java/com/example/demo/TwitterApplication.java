@@ -18,8 +18,6 @@ public class TwitterApplication {
 		SpringApplication.run(TwitterApplication.class, args);
 	}
 	
-	
-	/**Comment following lines if you want autowire Twitter tokens. Comment/uncomment accordingly in TwitterController.java**/
 	@Bean
 	public Twitter twitter() {
 		return new TwitterTemplate("consmer_key",
